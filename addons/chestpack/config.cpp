@@ -4,8 +4,7 @@ class CfgPatches
     {
         units[] = {};
         weapons[] = {};
-        //requiredAddons[] = {};
-        requiredAddons[] = {"ace_interact_menu"};
+        requiredAddons[] = {"ace_interaction"};
     };
 };
 
@@ -14,6 +13,7 @@ class CfgVehicles {
     class CAManBase : Man {
         class ACE_SelfActions {
             class ACE_Equipment {
+                exceptions[] += {"isNotSwimming"};
                 class Chestpack_onChest {
                     displayName = "Backpack on Chest";
                     statement = "[(_this select 0), ((_this select 0) call Chestpack_fnc_removeBackpack)] call Chestpack_fnc_setChestpack;";
